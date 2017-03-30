@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="FirmDataSet" targetNamespace="http://tempuri.org/FirmDataSet.xsd" xmlns:mstns="http://tempuri.org/FirmDataSet.xsd" xmlns="http://tempuri.org/FirmDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FirmConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="FirmConnectionString (Settings)" PropertyReference="ApplicationSettings.Прогноз_результатов_деятельности_фирмы.Properties.Settings.GlobalReference.Default.FirmConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="филиал_1TableAdapter" GeneratorDataComponentClassName="филиал_1TableAdapter" Name="филиал_1" UserDataComponentName="филиал_1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FirmConnectionString (Settings)" DbObjectName="филиал_1" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Даты, Y FROM филиал_1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Даты" DataSetColumn="Даты" />
+              <Mapping SourceColumn="Y" DataSetColumn="Y" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="FirmDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="FirmDataSet" msprop:Generator_UserDSName="FirmDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="филиал_1" msprop:Generator_TableClassName="филиал_1DataTable" msprop:Generator_TableVarName="tableфилиал_1" msprop:Generator_TablePropName="филиал_1" msprop:Generator_RowDeletingName="филиал_1RowDeleting" msprop:Generator_RowChangingName="филиал_1RowChanging" msprop:Generator_RowEvHandlerName="филиал_1RowChangeEventHandler" msprop:Generator_RowDeletedName="филиал_1RowDeleted" msprop:Generator_UserTableName="филиал_1" msprop:Generator_RowChangedName="филиал_1RowChanged" msprop:Generator_RowEvArgName="филиал_1RowChangeEvent" msprop:Generator_RowClassName="филиал_1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Даты" msprop:Generator_ColumnVarNameInTable="columnДаты" msprop:Generator_ColumnPropNameInRow="Даты" msprop:Generator_ColumnPropNameInTable="ДатыColumn" msprop:Generator_UserColumnName="Даты" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Y" msprop:Generator_ColumnVarNameInTable="columnY" msprop:Generator_ColumnPropNameInRow="Y" msprop:Generator_ColumnPropNameInTable="YColumn" msprop:Generator_UserColumnName="Y" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
