@@ -23,10 +23,16 @@ namespace Прогноз_результатов_деятельности_фир�
             this.Filial1TableAdapter.Fill(this.firmDataSet.филиал_1);
 
         }
-
+        
         private void филиал1BindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 newForm = new Form2(this.dataGridView1.Rows);
+            newForm.Show();
         }
     }
 }
