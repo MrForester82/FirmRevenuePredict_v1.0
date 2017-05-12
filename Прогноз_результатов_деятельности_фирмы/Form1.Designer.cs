@@ -51,6 +51,7 @@
             this.dataGridView1.DataSource = this.Filial1BindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(8, 12);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(260, 246);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -59,12 +60,14 @@
             this.датыDataGridViewTextBoxColumn.DataPropertyName = "Даты";
             this.датыDataGridViewTextBoxColumn.HeaderText = "Даты";
             this.датыDataGridViewTextBoxColumn.Name = "датыDataGridViewTextBoxColumn";
+            this.датыDataGridViewTextBoxColumn.Width = 125;
             // 
             // yDataGridViewTextBoxColumn
             // 
             this.yDataGridViewTextBoxColumn.DataPropertyName = "Y";
-            this.yDataGridViewTextBoxColumn.HeaderText = "Y";
+            this.yDataGridViewTextBoxColumn.HeaderText = "Прибыль";
             this.yDataGridViewTextBoxColumn.Name = "yDataGridViewTextBoxColumn";
+            this.yDataGridViewTextBoxColumn.Width = 115;
             // 
             // Filial1BindingSource
             // 
@@ -83,7 +86,7 @@
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(28, 264);
+            this.btnCalculate.Location = new System.Drawing.Point(38, 273);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(202, 23);
             this.btnCalculate.TabIndex = 1;
@@ -95,11 +98,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(293, 308);
+            this.ClientSize = new System.Drawing.Size(276, 308);
             this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.dataGridView1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(292, 346);
+            this.MinimumSize = new System.Drawing.Size(292, 346);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Исходные данные";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Filial1BindingSource)).EndInit();
@@ -114,9 +120,9 @@
         private FirmDataSet firmDataSet;
         private System.Windows.Forms.BindingSource Filial1BindingSource;
         private FirmDataSetTableAdapters.филиал_1TableAdapter Filial1TableAdapter;
+        private System.Windows.Forms.Button btnCalculate;
         private System.Windows.Forms.DataGridViewTextBoxColumn датыDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnCalculate;
     }
 }
 

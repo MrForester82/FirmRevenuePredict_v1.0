@@ -39,6 +39,9 @@ namespace Прогноз_результатов_деятельности_фир�
             double sin5x = 0;
             double cos6x = 0;
             double sin6x = 0;
+            List<Point> sourceCoord = new List<Point>();
+            List<Point> calculatedCoord = new List<Point>();
+            Point pos = new Point();
 
             while (sourceData[valueCount].Cells[1].Value.ToString() != ""){
                 valueCount++;
@@ -56,7 +59,7 @@ namespace Прогноз_результатов_деятельности_фир�
             {
                 //Заполнение индексов
                 dataGridView1[0, i].Value = i;
-                dataGridView1[0, i].Style.BackColor = Color.LightGoldenrodYellow;
+                dataGridView1[0, i].Style.BackColor = Color.LightGoldenrodYellow;                
 
                 //Даты
                 tmp = DateTime.Parse(sourceData[i].Cells[0].Value.ToString()).Date;
@@ -78,6 +81,10 @@ namespace Прогноз_результатов_деятельности_фир�
                 dataGridView1[3, i].Value = sourceData[i].Cells[1].Value;
                 dataGridView1[3, i].Style.BackColor = Color.LightGoldenrodYellow;
                 Yavg += double.Parse(dataGridView1[3, i].Value.ToString());
+
+                pos.X = i;
+                pos.Y = int.Parse(dataGridView1[3, i].Value.ToString());
+                sourceCoord.Add(pos);
 
                 //cos1x
                 dataGridView1[4, i].Value = Math.Round(double.Parse(dataGridView1[3, i].Value.ToString()) * Math.Cos(double.Parse(dataGridView1[2, i].Value.ToString())), 4);
@@ -202,9 +209,14 @@ namespace Прогноз_результатов_деятельности_фир�
             {
                 dataGridView1[16, i].Value = Math.Round(Yavg / 2 + cos1x * Math.Cos(double.Parse(dataGridView1[2, i].Value.ToString())) + sin1x * Math.Sin(double.Parse(dataGridView1[2, i].Value.ToString())) + cos2x * Math.Cos(2 * double.Parse(dataGridView1[2, i].Value.ToString())) + sin2x * Math.Sin(2 * double.Parse(dataGridView1[2, i].Value.ToString())) + cos3x * Math.Cos(3 * double.Parse(dataGridView1[2, i].Value.ToString())) + sin3x * Math.Sin(3 * double.Parse(dataGridView1[2, i].Value.ToString())) + cos4x * Math.Cos(4 * double.Parse(dataGridView1[2, i].Value.ToString())) + sin4x * Math.Sin(4 * double.Parse(dataGridView1[2, i].Value.ToString())) + cos5x * Math.Cos(5 * double.Parse(dataGridView1[2, i].Value.ToString())) + sin5x * Math.Sin(5 * double.Parse(dataGridView1[2, i].Value.ToString())) + cos6x * Math.Cos(6 * double.Parse(dataGridView1[2, i].Value.ToString())) + sin6x * Math.Sin(6 * double.Parse(dataGridView1[2, i].Value.ToString())), 4);
                 dataGridView1[16, i].Style.BackColor = Color.LightGreen;
+                pos.X = i;
+                pos.Y = (int)double.Parse(dataGridView1[16, i].Value.ToString());
+                calculatedCoord.Add(pos);
                 i++;
             }
 
+            Form3 newForm3 = new Form3(sourceCoord, calculatedCoord);
+            newForm3.Show();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

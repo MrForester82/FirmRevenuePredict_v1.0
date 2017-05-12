@@ -31,6 +31,7 @@ namespace Прогноз_результатов_деятельности_фир�
         
         private void button1_Click(object sender, EventArgs e)
         {
+            btnCalculate.Enabled = false;
             Form2 newForm = new Form2(this.dataGridView1.Rows);
             newForm.Show();
         }
